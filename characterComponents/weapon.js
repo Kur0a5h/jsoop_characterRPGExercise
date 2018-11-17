@@ -12,26 +12,29 @@ class Weapon{
 		this.bearer=bearer;
 	}
 	use(){	
+		var total;
+		for(var die=0;die<this.damageStats.count;count++)
 		var roll=Math.floor(Math.random()*this.damageStats.dice)+1;
 			total+=roll;
 
 		return total;
-	}
+	
 	}
 	remove(){
 		
 	}
 	generateAttackMessage(){
+		var attackMessage;
 		switch(this.type){
 			case bludgeoning:
-				console.log(this.bearer+" swings "+this.name);
+				attackMessage=this.bearer+" swings "+this.name;
 			break;
 			case slashing:
-				console.log(this.bearer+" slashes "+this.name);
+				attackMessage=this.bearer+" slashes "+this.name;
 			break;
 			case piercing:
-				console.log(this.bearer+" stabs "+this.name);
-
+				attackMessage=this.bearer+" stabs "+this.name;
+		
 
 		}
 		//bludgeoning weapons swings

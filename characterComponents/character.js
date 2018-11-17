@@ -25,6 +25,7 @@ class Character{
 		}
 	}
 	generateStat( statName, valueDice){
+		var total;
 		for(var i=0; i<valueDice.count;i++){
 			var roll=Math.floor(Math.random()*6)+1;
 			total+=roll;
@@ -41,8 +42,9 @@ class Character{
 		this.itemWeight+=this.wearable[weight];
 	}
 	attack( target ){
-		this.target=target;
 		var damage=this.weapon.use();
+		var message= this.weapon.generateAtt
+
 
 	}
 }
