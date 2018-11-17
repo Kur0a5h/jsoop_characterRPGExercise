@@ -2,6 +2,8 @@
 
 class Character{
 	constructor(name, charClass){
+		this.name = name;
+		this.charClass= charClass;
 		this.stats = {
 			strength: null,
 			dexterity: null,
@@ -23,15 +25,24 @@ class Character{
 		}
 	}
 	generateStat( statName, valueDice){
-
+		for(var i=0; i<valueDice.count;i++){
+			var roll=Math.floor(Math.random()*6)+1;
+			total+=roll;
+		}
+		this.stats[statName] = total;
+		return total;
 	}
 	equipWeapon( weapon ){
-
+		this.weapon=weapon;
+		this.itemWeight+=this.weapon.weight;
 	}
 	wearItem( wearable ){
-
+		this.wearable=wearable;
+		this.itemWeight+=this.wearable[weight];
 	}
 	attack( target ){
-		
+		this.target=target;
+		var damage=this.weapon.use();
+
 	}
 }
